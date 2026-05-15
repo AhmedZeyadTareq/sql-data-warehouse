@@ -1,3 +1,20 @@
+'
+    📄 Brief Documentation
+Purpose:
+Recreates two Bronze tables (sis_full_ug_enr, sis_enr_cleaned) for loading student enrollment data.
+What it does:
+
+Drops tables if they exist
+Creates them again with defined structure
+
+Warning ⚠️:
+Running this script deletes all existing data and recreates the tables from scratch.
+Why used:
+To ensure clean structure before loading fresh data.
+Provide your feedback on BizChat
+    '
+
+    
 IF OBJECT_ID('bronze.sis_full_ug_enr', 'U') IS NOT NULL
     DROP TABLE bronze.sis_full_ug_enr; 
 
