@@ -17,6 +17,9 @@ Running it **deletes all existing data** before loading new data.
 **Why used:**  
 To automate and monitor data loading into the Bronze layer.
 
+Example Use:
+EXEC bronze.load_sis_enr_data;
+
 */
 
 
