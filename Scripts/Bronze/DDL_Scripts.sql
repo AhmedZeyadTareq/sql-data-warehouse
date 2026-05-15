@@ -1,4 +1,4 @@
-'
+/*
     📄 Brief Documentation
 Purpose:
 Recreates two Bronze tables (sis_full_ug_enr, sis_enr_cleaned) for loading student enrollment data.
@@ -12,7 +12,7 @@ Running this script deletes all existing data and recreates the tables from scra
 Why used:
 To ensure clean structure before loading fresh data.
 Provide your feedback on BizChat
-    '
+    */
 
     
 IF OBJECT_ID('bronze.sis_full_ug_enr', 'U') IS NOT NULL
