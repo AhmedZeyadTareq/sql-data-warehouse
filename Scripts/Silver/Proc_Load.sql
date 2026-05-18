@@ -93,8 +93,5 @@ WHERE is_valid = 1
 GROUP BY
     term_code,
     student_id;
-    
-FROM bronze.sis_full_ug_enr;
-GO
 
 
