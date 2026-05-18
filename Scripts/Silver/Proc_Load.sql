@@ -44,6 +44,7 @@ SELECT
         WHEN Unit_Taken IS NULL OR LTRIM(RTRIM(Unit_Taken)) = '' THEN 0  -- ✅ updated check
         ELSE 1
     END
+FROM bronze.sis_full_ug_enr;    
 
 TRUNCATE TABLE silver.ug_student_term;
 
