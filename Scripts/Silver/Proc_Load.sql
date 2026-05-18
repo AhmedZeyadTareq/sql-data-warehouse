@@ -4,17 +4,30 @@
 **Purpose:**  
 Stored procedure to transform and load enrollment data from Bronze to Silver layer.
 
-**What it does:**
+**Tables:**
 
-*   Truncates (clears) `silver.ug_enrollment_clean`
-*   Cleans and loads raw data from `bronze.sis_full_ug_enr`
-*   Standardizes fields (trimming, gender normalization)
-*   Flags valid/invalid records
-*   Truncates `silver.ug_student_term`
-*   Aggregates student data (courses, units, FTE status)
+1. **silver.ug_enrollment_clean**
+   * Loads clean enrollment data
+   * Truncates table before load
+   * Inserts data from `bronze.sis_full_ug_enr`
+   * Applies:
+       - Trimming (LTRIM/RTRIM)
+       - Gender standardization
+       - Data validation (`is_valid` flag)
+
+2. **silver.ug_student_term**
+   * Stores aggregated student data per term
+   * Truncates table before load
+   * Groups by:
+       - term_code
+       - student_id
+   * Calculates:
+       - total_courses
+       - total_units
+       - is_fte (>= 12 units)
 
 **Warning ⚠️:**  
-Running it **deletes all existing data** in both Silver tables before reloading (full refresh).
+Running it **deletes all existing data** in both tables before reloading (full refresh).
 
 **Why used:**  
 To clean, structure, and aggregate enrollment data for analysis in the Silver layer.
