@@ -36,7 +36,7 @@ Example Use:
 EXEC bronze.insert_organize_ug_enrollment;
 */
 
-CREATE or ALTER PROCEDURE bronze.insert_organize_ug_enrollment AS
+CREATE or ALTER PROCEDURE silver.insert_organize_ug_enrollment AS
 BEGIN
     TRUNCATE TABLE silver.ug_enrollment_clean;
     
