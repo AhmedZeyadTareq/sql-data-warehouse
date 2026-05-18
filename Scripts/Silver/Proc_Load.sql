@@ -66,7 +66,7 @@ BEGIN
         LTRIM(RTRIM(Name)),
         LTRIM(RTRIM(Subject)),
     
-        LTRIM(RTRIM(Unit_Taken)),   -- ✅ ONLY trim, no conversion
+        LTRIM(RTRIM(Unit_Taken)),
     
         CASE 
             WHEN UPPER(LTRIM(RTRIM(Gender))) IN ('M','MALE') THEN 'Male'
@@ -81,7 +81,7 @@ BEGIN
             WHEN Id IS NULL OR LTRIM(RTRIM(Id)) = '' THEN 0
             WHEN Term_Code IS NULL OR LTRIM(RTRIM(Term_Code)) = '' THEN 0
             WHEN Subject IS NULL OR LTRIM(RTRIM(Subject)) = '' THEN 0
-            WHEN Unit_Taken IS NULL OR LTRIM(RTRIM(Unit_Taken)) = '' THEN 0  -- ✅ updated check
+            WHEN Unit_Taken IS NULL OR LTRIM(RTRIM(Unit_Taken)) = '' THEN 0 
             ELSE 1
         END
     FROM bronze.sis_full_ug_enr;    
@@ -91,7 +91,7 @@ BEGIN
     INSERT INTO silver.ug_student_term
     (
         term_code,
-        term_name,      -- ✅ added
+        term_name,   
     
         student_id,
         student_name,
@@ -108,7 +108,7 @@ BEGIN
     )
     SELECT
         term_code,
-        MAX(term_name),   -- ✅ bring from source
+        MAX(term_name), 
     
         student_id,
         MAX(student_name),
