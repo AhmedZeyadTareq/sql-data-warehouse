@@ -55,6 +55,7 @@ BEGIN
     
 END;
 
-EXEC gold.load_ug_term_student_count;
 
-SELECT * FROM gold.ug_term_student_count;
+
+
+
