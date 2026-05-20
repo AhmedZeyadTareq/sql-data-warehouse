@@ -28,7 +28,9 @@ CREATE TABLE bronze.sis_full_ug_enr (
     Name NVARCHAR(200),                    -- e.g., Aya Abbas Hadi Salih
     Subject NVARCHAR(20),                  -- e.g., ASP
     Unit_Taken DECIMAL(5,2),               -- e.g., 0.00
-    Gender CHAR(1)                         -- e.g., F
+    Gender CHAR(1),                         -- e.g., F
+    Mapped_Id NVARCHAR(20),
+    Val_Key NVARCHAR(10),
 )
 
 IF OBJECT_ID('bronze.sis_enr_cleaned', 'U') IS NOT NULL
@@ -46,5 +48,5 @@ CREATE TABLE bronze.sis_enr_cleaned (
     Unit_Taken DECIMAL(5,2),               -- e.g., 0.00
     Gender CHAR(1),                        -- e.g., F
     Mapped_Id NVARCHAR(20),                -- e.g., 1231220106
-    Validation_Key NVARCHAR(50),           -- e.g., 33333
+    Validation_Key NVARCHAR(10),           -- e.g., 33333
 )
