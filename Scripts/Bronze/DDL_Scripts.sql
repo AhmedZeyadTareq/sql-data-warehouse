@@ -30,7 +30,7 @@ CREATE TABLE bronze.sis_full_ug_enr (
     Unit_Taken DECIMAL(5,2),               -- e.g., 0.00
     Gender CHAR(1),                         -- e.g., F
     Mapped_Id NVARCHAR(20),
-    Val_Key NVARCHAR(10),
+    Validation_Key NVARCHAR(10),
 )
 
 IF OBJECT_ID('bronze.sis_enr_cleaned', 'U') IS NOT NULL
