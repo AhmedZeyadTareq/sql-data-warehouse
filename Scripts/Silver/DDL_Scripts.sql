@@ -1,44 +1,35 @@
 /*
 ### 📄 Brief Documentation
 
-**Purpose:**  
-Create Silver layer tables for cleaned and aggregated enrollment data.
+Purpose:
+Create Silver tables for cleaned and aggregated enrollment data.
 
-**What it does:**
+What it does:
+- Drops and recreates two tables
 
-*   Drops existing tables if they exist
-*   Creates `silver.ug_enrollment_clean` for cleaned detailed data
-*   Creates `silver.ug_student_term` for aggregated student-level data
+Tables:
 
-**Tables:**
+1. silver.ug_enrollment_clean
+- Clean row-level data (1 row per student per subject)
+- Includes student info, academic info, subject, units (string)
+- Includes validation_key (used later for aggregation)
+- Includes is_valid, source_file, load_datetime
 
-1. **silver.ug_enrollment_clean**
-   *   Stores cleaned, row-level enrollment data
-   *   One row per student per subject
-   *   Includes:
-       - student info (ID, name, gender)
-       - academic info (term, program, college)
-       - subject and units_taken (raw string)
-       - data quality flag (`is_valid`)
-       - load tracking (`source_file`, `load_datetime`)
+2. silver.ug_student_term
+- Aggregated data (1 row per student per term)
+- started_year comes from validation_key
+- Includes totals:
+  - total_courses
+  - total_units
+  - is_fte (>= 12 units)
 
-2. **silver.ug_student_term**
-   *   Stores aggregated data per student per term
-   *   One row per student per term
-   *   Includes:
-       - student info (ID, name, gender)
-       - academic info (term, program, college)
-       - total_courses (count of subjects)
-       - total_units (numeric sum)
-       - FTE status (`is_fte`)
-       - load tracking (`source_file`, `load_datetime`)
+Warning:
+Drops tables → deletes all data.
 
-**Warning ⚠️:**  
-Running this script **drops existing tables**, which permanently removes all stored data and structure before recreating them.
-
-**Why used:**  
-To define structured tables in the Silver layer for cleaned and aggregated analytics data.
+Why used:
+Prepare clean and aggregated data for analysis.
 */
+
 
 USE DataWarehouse;
 GO
