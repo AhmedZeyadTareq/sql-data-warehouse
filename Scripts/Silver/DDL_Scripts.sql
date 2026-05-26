@@ -56,8 +56,9 @@ CREATE TABLE silver.ug_enrollment_clean
         student_id       varchar(50),
         student_name     nvarchar(200),
         subject          varchar(100),
-        units_taken      varchar(50),   -- ✅ kept as-is (string)
+        units_taken      varchar(50), 
         gender           varchar(20),
+        validation_key   varchar(20),
         source_file      varchar(50),
         load_datetime    datetime,
         is_valid         bit
@@ -70,8 +71,8 @@ DROP TABLE IF EXISTS silver.ug_student_term;
 
 CREATE TABLE silver.ug_student_term
     (
-        term_code        varchar(50),
-        term_name        varchar(100),   -- ✅ added
+        started_year     varchar(20),
+        term_name        varchar(100), 
 
         student_id       varchar(50),
         student_name     nvarchar(200),
