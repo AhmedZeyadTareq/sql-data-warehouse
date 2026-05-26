@@ -33,7 +33,7 @@ Running it **deletes all existing data** in both tables before reloading (full r
 To clean, structure, and aggregate enrollment data for analysis in the Silver layer.
 
 Example Use:
-EXEC bronze.insert_organize_ug_enrollment;
+EXEC silver.insert_organize_ug_enrollment;
 */
 
 CREATE or ALTER PROCEDURE silver.insert_organize_ug_enrollment AS
@@ -52,6 +52,7 @@ BEGIN
         subject,
         units_taken,
         gender,
+        validation_key,
         source_file,
         load_datetime,
         is_valid
@@ -73,6 +74,8 @@ BEGIN
             WHEN UPPER(LTRIM(RTRIM(Gender))) IN ('F','FEMALE') THEN 'Female'
             ELSE 'Unknown'
         END,
+
+        LTRIM(RTRIM(validation_key)),
     
         'sis_full_ug_enr',
         GETDATE(),
@@ -84,13 +87,14 @@ BEGIN
             WHEN Unit_Taken IS NULL OR LTRIM(RTRIM(Unit_Taken)) = '' THEN 0 
             ELSE 1
         END
+
     FROM bronze.sis_full_ug_enr;    
     
     TRUNCATE TABLE silver.ug_student_term;
     
     INSERT INTO silver.ug_student_term
     (
-        term_code,
+        started_year,
         term_name,   
     
         student_id,
@@ -107,7 +111,7 @@ BEGIN
         load_datetime
     )
     SELECT
-        term_code,
+        MAX(validation_key),
         MAX(term_name), 
     
         student_id,
@@ -135,4 +139,3 @@ BEGIN
         student_id;
 END
     
-
