@@ -42,30 +42,7 @@ BEGIN
 		PRINT '======================================================'
 
 		PRINT '------------------------------------------------------'
-		PRINT 'Loading sis_enr_cleaned data'
-		PRINT '------------------------------------------------------'
-
-		SET @StartTime = GETDATE();
-		PRINT '>> Truncating bronze.sis_enr_cleaned'
-		TRUNCATE TABLE bronze.sis_enr_cleaned;
-
-		PRINT '>> Inserting data into bronze.sis_enr_cleaned...'
-		BULK INSERT bronze.sis_enr_cleaned
-		FROM 'C:\Users\ahmed\Desktop\Data Warhouse\DataSource\sis_enr_cleaned.csv'
-		WITH
-		(
-			FIRSTROW = 2,
-			FIELDTERMINATOR = ',',
-			TABLOCK
-		);
-
-		-- SELECT * FROM bronze.sis_enr_cleaned;
-		-- SELECT COUNT(*) FROM bronze.sis_enr_cleaned;
-		SET @EndTime = GETDATE();
-		PRINT '>> Data load Duration: ' + CAST(DATEDIFF(SECOND, @StartTime, @EndTime) AS NVARCHAR(10)) + ' seconds.';
-
-		PRINT '------------------------------------------------------'
-		PRINT 'Loading sis_enr_cleaned data'
+		PRINT 'Loading sis enrollment full UG data'
 		PRINT '------------------------------------------------------'
 
 		SET @StartTime = GETDATE();
