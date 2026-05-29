@@ -1,9 +1,8 @@
 /*
     📄 Brief Documentation
 Purpose:
-Recreates two Bronze tables (sis_full_ug_enr, sis_enr_cleaned) for loading student enrollment data.
+Recreates Bronze tables (sis_full_ug_enr) for loading student enrollment data.
 What it does:
-
 Drops tables if they exist
 Creates them again with defined structure
 
