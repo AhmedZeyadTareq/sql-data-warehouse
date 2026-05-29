@@ -28,7 +28,7 @@ Warning:
 Truncates tables → deletes all data (full refresh)
 
 Example:
-EXEC silver.insert_organize_ug_enrollment;
+EXEC bronze.load_sis_enr_data;
 */
 
 
