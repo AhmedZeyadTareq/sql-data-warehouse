@@ -5,7 +5,9 @@ SELECT term_name,
 	   source_file
 FROM silver.ug_student_term
 GROUP BY term_name, source_file
--------------------
+GO
+	
+
 CREATE OR ALTER VIEW gold.ug_cohort_fte AS
 SELECT started_year AS joined_year,
        term_name,
@@ -13,7 +15,9 @@ SELECT started_year AS joined_year,
        COUNT(DISTINCT CASE WHEN is_fte = 1 THEN student_id END) AS total_cohort_fte_students
 FROM silver.ug_student_term
 GROUP BY started_year, term_name
---------------------
+GO
+
+	
 CREATE OR ALTER VIEW gold.ug_by_college_fte AS
 SELECT college,
 	   term_name,
@@ -21,7 +25,8 @@ SELECT college,
 	   COUNT(DISTINCT CASE WHEN is_fte = 1 THEN student_id END) AS total_fte_students
 FROM silver.ug_student_term
 GROUP BY college, term_name
---------------------
+GO
+	
 CREATE OR ALTER VIEW gold.ug_by_program_fte AS
 SELECT college,
 	   program,
@@ -30,3 +35,4 @@ SELECT college,
 	   COUNT(DISTINCT CASE WHEN is_fte = 1 THEN student_id END) AS total_fte_students
 FROM silver.ug_student_term
 GROUP BY college, program, term_name
+GO
