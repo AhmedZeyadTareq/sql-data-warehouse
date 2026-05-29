@@ -5,24 +5,12 @@ Purpose:
 Stored procedure to clean and load enrollment data from Bronze to Silver layer.
 
 What it does:
-- Truncates and reloads two tables
+- Truncates and reloads the tables
 
 Tables:
 
-1. silver.ug_enrollment_clean
-- Loads cleaned row-level data (1 row per student per subject)
-- Applies trimming, gender standardization, and validation
-- Includes validation_key (used later for aggregation)
-- Adds source_file and load_datetime
-
-2. silver.ug_student_term
-- Aggregates data (1 row per student per term)
-- Groups by: term_code, student_id
-- started_year is derived from validation_key
-- Calculates:
-  - total_courses
-  - total_units
-  - is_fte (>= 12 units)
+1. bronze.load_sis_enr_data
+	load the data as it is from the source.
 
 Warning:
 Truncates tables → deletes all data (full refresh)
