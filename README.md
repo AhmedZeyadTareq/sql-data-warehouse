@@ -38,3 +38,7 @@ Develop SQL-based analytics to deliver detailed reports on:
 
 These insights empower stakeholders with key business metrics and support strategic decision-making.
 ``
+
+### Data Architecture (Structure Approach)
+
+![Data Architecture](images/Data%20Architecture.drawio%20(4).png)
