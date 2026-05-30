@@ -50,3 +50,12 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 ### Data Architecture (Structure Approach)
 
 ![Data Architecture](images/data-architecture.png)
+
+
+### 🥉🥈 Data Warehouse Layers
+
+images/data-layers.png
+
+- **Bronze:** Raw data (no transformation)  
+- **Silver:** Cleaned and standardized data  
+- **Gold:** Aggregated data for reporting (star schema)  
