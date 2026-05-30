@@ -41,4 +41,4 @@ These insights empower stakeholders with key business metrics and support strate
 
 ### Data Architecture (Structure Approach)
 
-![Data Architecture](images/Data%20Architecture.drawio%20(4).png)
+![Data Architecture](images/data-architecture.png)
