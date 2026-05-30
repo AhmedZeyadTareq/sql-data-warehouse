@@ -60,6 +60,11 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 - **Silver:** Cleaned and standardized data  
 - **Gold:** Aggregated data for reporting (star schema)
 
+### 🏗️ High-Level Architecture
+
+![High-Level Architecture](images/high-level-architecture.png)
+
+
 ### 🔄 Data Flow
 
 ![Data Flow](images/data-flow.png)
@@ -67,6 +72,3 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 End-to-end flow from source systems to analytics consumption.
 
 
-### 🏗️ High-Level Architecture
-
-![High-Level Architecture](images/high-level-architecture.png)
