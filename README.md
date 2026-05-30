@@ -54,7 +54,7 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 
 ### 🥉🥈 Data Warehouse Layers
 
-images/data-layers.png
+![Layers](images/data-layers.png)
 
 - **Bronze:** Raw data (no transformation)  
 - **Silver:** Cleaned and standardized data  
