@@ -37,6 +37,14 @@ Develop SQL-based analytics to deliver detailed reports on:
 - Cohort tracking  
 
 These insights empower stakeholders with key business metrics and support strategic decision-making.
+
+
+### 🔄 ETL Technique
+
+![ETL Process](images/etl-technique.png)
+
+The ETL (Extract, Transform, Load) process is designed to ensure reliable and high-quality data integration:
+
 ``
 
 ### Data Architecture (Structure Approach)
