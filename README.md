@@ -58,4 +58,10 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 
 - **Bronze:** Raw data (no transformation)  
 - **Silver:** Cleaned and standardized data  
-- **Gold:** Aggregated data for reporting (star schema)  
+- **Gold:** Aggregated data for reporting (star schema)
+
+### 🔄 Data Flow
+
+images/data-flow.png
+
+End-to-end flow from source systems to analytics consumption.
