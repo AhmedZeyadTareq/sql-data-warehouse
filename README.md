@@ -65,3 +65,8 @@ The ETL (Extract, Transform, Load) process is designed to ensure reliable and hi
 ![Data Flow](images/data-flow.png)
 
 End-to-end flow from source systems to analytics consumption.
+
+
+### 🏗️ High-Level Architecture
+
+![High-Level Architecture](images/high-level-architecture.png)
